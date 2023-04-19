@@ -11,15 +11,15 @@ function setWorld(worldState) {
             '                 ',
             ' cdddddddddddde  ',
             ' 30000000000002  ',
-            ' 30000000000002  ',
+            ' 30000000000002  ',    
             ' 30000000000002  ',
             ' 30030000008889  ',
             ' 30030000024445  ',
             ' 300a8888897777  ',
             ' 30064444457777  ',
-            ' 30000000000000  ',
+            ' 30000000000002  ',
+            ' 30000000000002  ',
             ' 30000000021111  ',
-            ' 3000000002      ',
             ' 1111111111      ',
             '      b          ',
             '     b      b    ',
@@ -54,8 +54,8 @@ function setWorld(worldState) {
             '      0  0     ',
             '           5   ',
             '           6   ',
-            '     5         ',
-            '     6   0     ',
+            '     12     789',
+            '     34  0     ',
             '               ',
             '               ',
             '               '
@@ -70,6 +70,9 @@ function setWorld(worldState) {
                 '4': () => makeTile('bigtree-pt4'),
                 '5': () => makeTile('tree-t'),
                 '6': () => makeTile('tree-b'),
+                '7': () => makeTile('l-1'),
+                '8': () => makeTile('l-2'),
+                '9': () => makeTile('l-3')
             }
         }),
         addLevel([
@@ -77,14 +80,14 @@ function setWorld(worldState) {
             '0     11       0',
             '0           11 0',
             '0           11 0',
-            '0              0',
             '0   2          0',
-            '0   2      3333 ',
-            '0   2      0   0',
-            '0   3333333    0',
-            '0    0         0',
+            '0   2     333330',
+            '0   2     0    ',
+            '0   0000000    0',
+            '0    00        0',
+            '0               ',
+            '0               ',
             '0          0000 ',
-            '0          0    ',
             ' 0000000000     ',
             '                '
         ], {
@@ -253,7 +256,7 @@ function setWorld(worldState) {
             pos(150, 500),
             fixed()
         ])
-        const dialogue = "Defeat all monsters on this island and you'll become the champion!"
+        const dialogue = "Answer the question of all the Professors to graduate. Good luck!"
         const content = dialogueBox.add([
             text('', 
             {
