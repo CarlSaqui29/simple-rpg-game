@@ -1,3 +1,15 @@
+window.onload = resetPoints;
+
+function resetPoints() {
+    localStorage.setItem('profDrop', 0);
+}
+
+function addPoints() {
+    let curPoints = parseInt(localStorage.getItem('profDrop'));
+    curPoints += 1;
+    localStorage.setItem('profDrop', curPoints);
+}
+
 function setBattle(worldState) {
     add([
         sprite('battle-background'),
@@ -198,6 +210,7 @@ function setBattle(worldState) {
         colorizeHealthBar(enemyMonHealthBar)
 
         if (enemyMonHealthBar.width < 0 && !enemyMon.fainted) {
+            addPoints();
             makeMonDrop(enemyMon)
             content.text = worldState.enemyName.toUpperCase() + ' fainted!'
             enemyMon.fainted = true
@@ -211,6 +224,7 @@ function setBattle(worldState) {
         }
 
         if (playerMonHealthBar.width < 0 && !playerMon.fainted) {
+            resetPoints();
             makeMonDrop(playerMon)
             content.text = 'IT SECTION failed!'
             playerMon.fainted = true

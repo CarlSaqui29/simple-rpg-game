@@ -1,3 +1,8 @@
+function getCurrentPoints() {
+    let curPoints = parseInt(localStorage.getItem('profDrop'));
+    return curPoints;
+}
+
 function setWorld(worldState) {
     function makeTile(type) {
         return [
@@ -270,11 +275,11 @@ function setWorld(worldState) {
             pos(40,30),
             fixed()
         ])
-
-        if (worldState.faintedMons < 4) {
+        let point = getCurrentPoints()
+        if (point < 2) {
             content.text = dialogue
         } else {
-            content.text = "You're the champion!"
+            content.text = "Wow! you passed both Thesis and Physics, I'm so proud of you cheers! You are now graduated!!!"
         }
 
         onUpdate(() => {
