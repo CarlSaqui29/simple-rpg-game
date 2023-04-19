@@ -80,9 +80,9 @@ function setWorld(worldState) {
             '0     11       0',
             '0           11 0',
             '0           11 0',
+            '0              0',
             '0   2          0',
-            '0   2     333330',
-            '0   2     0    ',
+            '0   2      0000',
             '0   0000000    0',
             '0    00        0',
             '0               ',
@@ -130,16 +130,18 @@ function setWorld(worldState) {
     }
 
     add([sprite('prof-mons'), area(), body({isStatic: true}), pos(90,670), scale(4), 'Prof. Physics'])
+    // add([sprite('prof-mons'), area(), body({isStatic: true}), pos(400,200), scale(4), 'Thesis Prof.'])
+    // centipedeMon.play('centipede')
 
-    const spiderMon = add([sprite('mini-mons'), area(), body({isStatic: true}), pos(400,300), scale(4), 'spider'])
-    spiderMon.play('spider')
-    spiderMon.flipX = true
+    const spiderMon = add([sprite('prof2'), area(), body({isStatic: true}), pos(400,200), scale(4), 'Thesis Prof.'])
+    // spiderMon.play('prof2')
+    // spiderMon.flipX = true
 
-    const centipedeMon = add([sprite('mini-mons'), area(), body({isStatic: true}), pos(100,100), scale(4), 'centipede'])
-    centipedeMon.play('centipede')
+    // const centipedeMon = add([sprite('mini-mons'), area(), body({isStatic: true}), pos(100,200), scale(4), 'centipede'])
+    // centipedeMon.play('centipede')
 
-    const grassMon = add([sprite('mini-mons'), area(), body({isStatic: true}), pos(900, 570), scale(4), 'grass'])
-    grassMon.play('grass')
+    // const grassMon = add([sprite('mini-mons'), area(), body({isStatic: true}), pos(900, 570), scale(4), 'grass'])
+    // grassMon.play('grass')
 
     add([ sprite('npc'), scale(4), pos(600,700), area(), body({isStatic: true}), 'npc'])
 
@@ -303,7 +305,8 @@ function setWorld(worldState) {
 
 
     onCollideWithPlayer('Prof. Physics', 'cat', player, worldState)
-    // onCollideWithPlayer('spider', player, worldState)
-    // onCollideWithPlayer('centipede', player, worldState)
-    // onCollideWithPlayer('grass', player, worldState)
+    onCollideWithPlayer('Thesis Prof.', 'spider', player, worldState)
+    // onCollideWithPlayer('uo', 'spider', player, worldState)
+    // onCollideWithPlayer('Thesis Prof.','centipede', player, worldState)
+    // onCollideWithPlayer('sdsad', 'grass', player, worldState)
 }
