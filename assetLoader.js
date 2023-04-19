@@ -26,8 +26,9 @@ function loadAssets() {
     })
     loadSpriteAtlas('./assets/profs.png', {
         'prof1': { x: 32, y: 98, width: 16, height: 24 },
+        'prof2': { x: 0, y: 26, width: 18, height: 24 },
         'prof-mons': { x: 0, y: 0, width: 144, height: 24, sliceX: 8, sliceY: 1,
-            anims: { 'prof1': 1}
+            anims: { 'prof1': 1, 'prof2': 1}
         }
     })
     loadSprite('battle-background', './assets/battleBackground.png')
@@ -59,13 +60,6 @@ function loadAssets() {
                 'l-2': 50,
                 'l-3': 51,
 
-            }
-        }
-    })
-    loadSpriteAtlas('./assets/tilespack.png', {
-        'tile': { x: 0, y: 0, width: 128, height: 128, sliceX: 8, sliceY: 8,
-            anims: {
-                'bigtree-pt1': 1,
             }
         }
     })
