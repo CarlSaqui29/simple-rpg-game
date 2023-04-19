@@ -6,7 +6,7 @@ function setBattle(worldState) {
     ])
 
     const enemyMon = add([
-        sprite(worldState.enemyName + '-mon'),
+        sprite(worldState.mon + '-mon'),
         scale(5),
         pos(1300,100),
         opacity(1), 
@@ -49,7 +49,7 @@ function setBattle(worldState) {
     ])
 
     playerMonHealthBox.add([
-        text('MUSHROOM', {size: 32}),
+        text('IT SECTION', {size: 32}),
         color(10,10,10),
         pos(10, 10)
     ])
@@ -101,7 +101,7 @@ function setBattle(worldState) {
     ])
 
     const content = box.add([
-        text('MUSHROOM is ready to battle!', { size: 42}),
+        text('IT SECTION is ready to battle!', { size: 42}),
         color(10,10,10),
         pos(20,20)
     ])
@@ -136,7 +136,7 @@ function setBattle(worldState) {
         if (playerMon.fainted || enemyMon.fainted) return
 
         if (phase === 'player-selection') {
-            content.text = '> Tackle'
+            content.text = '> Git Push'
             phase = 'player-turn'
             return
         }
@@ -162,7 +162,7 @@ function setBattle(worldState) {
             if (damageDealt > 150) {
                 content.text = "It's a critical hit!"
             } else {
-                content.text = 'MUSHROOM used tackle.'
+                content.text = 'IT SECTION used Git Push.'
             }
 
             reduceHealth(enemyMonHealthBar, damageDealt)
@@ -202,7 +202,7 @@ function setBattle(worldState) {
             content.text = worldState.enemyName.toUpperCase() + ' fainted!'
             enemyMon.fainted = true
             setTimeout(() => {
-                content.text = 'MUSHROOM won the battle!'
+                content.text = 'IT SECTION passed the subject!'
             }, 1000)
             setTimeout(() => {
                 worldState.faintedMons.push(worldState.enemyName)
@@ -212,10 +212,10 @@ function setBattle(worldState) {
 
         if (playerMonHealthBar.width < 0 && !playerMon.fainted) {
             makeMonDrop(playerMon)
-            content.text = 'MUSHROOM fainted!'
+            content.text = 'IT SECTION failed!'
             playerMon.fainted = true
             setTimeout(() => {
-                content.text = 'You rush to get MUSHROOM healed!'
+                content.text = 'You rush to enroll on SUMMER CLASS!'
             }, 1000)
             setTimeout(() => {
                 worldState.playerPos = vec2(500,700)
