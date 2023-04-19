@@ -48,7 +48,18 @@ function loadAssets() {
                 'ground-l': 41,
                 'ground-m': 42,
                 'ground-r': 43,
-                'rock-water': 60
+                'rock-water': 60,
+                'l-1': 49,
+                'l-2': 50,
+                'l-3': 51,
+
+            }
+        }
+    })
+    loadSpriteAtlas('./assets/tilespack.png', {
+        'tile': { x: 0, y: 0, width: 128, height: 128, sliceX: 8, sliceY: 8,
+            anims: {
+                'bigtree-pt1': 1,
             }
         }
     })
