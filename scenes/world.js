@@ -129,7 +129,7 @@ function setWorld(worldState) {
         }
     }
 
-    add([sprite('mini-mons'), area(), body({isStatic: true}), pos(100,700), scale(4), 'cat'])
+    add([sprite('prof-mons'), area(), body({isStatic: true}), pos(90,670), scale(4), 'Prof. Physics'])
 
     const spiderMon = add([sprite('mini-mons'), area(), body({isStatic: true}), pos(400,300), scale(4), 'spider'])
     spiderMon.play('spider')
@@ -256,7 +256,7 @@ function setWorld(worldState) {
             pos(150, 500),
             fixed()
         ])
-        const dialogue = "Answer the question of all the Professors to graduate. Good luck!"
+        const dialogue = "Defeat all the Professor and pass their subject to graduate!"
         const content = dialogueBox.add([
             text('', 
             {
@@ -288,12 +288,13 @@ function setWorld(worldState) {
         tween(flash.opacity, 1, 0.5, (val) => flash.opacity = val, easings.easeInBounce)
     }
 
-    function onCollideWithPlayer(enemyName, player, worldState) {
+    function onCollideWithPlayer(enemyName, mon, player, worldState) {
         player.onCollide(enemyName, () => {
             flashScreen()
             setTimeout(() => {
                 worldState.playerPos = player.pos
                 worldState.enemyName = enemyName
+                worldState.mon = mon
                 go('battle', worldState) 
             }, 1000)
         })
@@ -301,8 +302,8 @@ function setWorld(worldState) {
 
 
 
-    onCollideWithPlayer('cat', player, worldState)
-    onCollideWithPlayer('spider', player, worldState)
-    onCollideWithPlayer('centipede', player, worldState)
-    onCollideWithPlayer('grass', player, worldState)
+    onCollideWithPlayer('Prof. Physics', 'cat', player, worldState)
+    // onCollideWithPlayer('spider', player, worldState)
+    // onCollideWithPlayer('centipede', player, worldState)
+    // onCollideWithPlayer('grass', player, worldState)
 }
